@@ -5,6 +5,7 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 const Constraint=Matter.Constraint;
 var bob1,bob2,bob3,bob4,bob5;
+var bobDiameter=50;
 function preload()
 {
 	
@@ -18,17 +19,17 @@ function setup() {
     world = engine.world;
 	
     bob1=new bob(300,350,50);
-    bob2=new bob(340,350,50);
-    bob3=new bob(380,350,50);
-    bob4=new bob(420,350,50);
-    bob5=new bob(460,350,50);
+    bob2=new bob(350,350,50);
+    bob3=new bob(400,350,50);
+    bob4=new bob(450,350,50);
+    bob5=new bob(500,350,50);
     roof1=new roof(400,100,300,40)
     ground=new roof(200,700,900,20)
-    rope1=new rope(bob1.body,roof1.body,-50*2,0)
-    rope2=new rope(bob2.body,roof1.body,-25*2,0)
-    rope3=new rope(bob3.body,roof1.body,0*2,0)
-    rope4=new rope(bob4.body,roof1.body,25*2,0)
-    rope5=new rope(bob5.body,roof1.body,50*2,0)
+    rope1=new rope(bob1.body,roof1.body,-bobDiameter*2,0)
+    rope2=new rope(bob2.body,roof1.body,-bobDiameter*1,0)
+    rope3=new rope(bob3.body,roof1.body,bobDiameter*0,0)
+    rope4=new rope(bob4.body,roof1.body,bobDiameter*1,0)
+    rope5=new rope(bob5.body,roof1.body,bobDiameter*2,0)
 
 	  Engine.run(engine);
   
